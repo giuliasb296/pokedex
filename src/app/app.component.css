@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Mooli&display=swap');
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 96px;
+    height: auto;
+}
+
+.imgProfile {
+    width:56px;
+    height: 56px;
+}
+
+ul, li {
+    display: inline-block;
+    margin-left: 1rem;
+    color: #406bd4;
+    font-family: 'Mooli', sans-serif;
+    cursor: pointer;
+}
+
+.link_selecionado {
+    color: #406bd4;
+    border-bottom: 2px solid #3764d3;
+    padding-bottom: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Fredoka;
+    font-size: 3rem;
+    color: #3764d3;
+}
+
+.search {
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #3764d3;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    gap: 8px;
+    align-items: center;
+}
+
+.inputPrincipal {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.btn_search {
+    background-color: #ffcb00;
+    height: 100%;
+    border-radius: 8px;
+    font-family: 'Fredoka', sans-serif;
+    color: #3764d3;
+}
+
+.btn_fechar {
+    background-color: red;
+    border-radius: 8px;
+}
+main {
+    width: 81%;
+    margin: auto;
+    display: flex;
+    padding-top: 48px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+select {
+    width: 180px;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #3764d3;
+    border-radius: 4px;
+}
+
+label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Mooli;
+    margin-bottom: 4px;
+}
+
+h3 {
+    color: black;
+    font-family:Mooli;
+}
+
+h2 {
+    color:black;
+    font-family: Mooli;
+    font-size: 1.5rem;
+}
+
+.cardPokemon {
+    padding: 16px;
+    border: 2px solid #3764d3;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    margin-right: 30px;
+}
+
+.photoPokemon {
+    width: 170px;
+    height: 170px;
+}
+
+
+/*Abaixo estão os tipos dos pokemóns*/
+.Grama {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: #7dc500;
+    color:black;
+    margin-right: 4px;
+}
+
+.Elétrico {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: yellow;
+    color:black;
+    margin-right: 4px;
+}
+
+.Venenoso {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: purple;
+    color:black;
+    margin-right: 4px;
+}
+
+.Pedra {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: gray;
+    color:black;
+    margin-right: 4px;
+}
+
+.Fogo {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: orangered;
+    color:black;
+    margin-right: 4px;
+}
+
+.Água {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: blue;
+    color:black;
+    margin-right: 4px;
+}
+
+.Mítico {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: palevioletred;
+    color:black;
+    margin-right: 4px;
+}
+
+.Normal {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: burlywood;
+    color:black;
+    margin-right: 4px;
+}
+
+.Fantasma {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: lightseagreen;
+    color:black;
+    margin-right: 4px;
+}
+
+.Gelo {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: lightsteelblue;
+    color:black;
+    margin-right: 4px;
+}
+
+.Lutador {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: brown;
+    color:black;
+    margin-right: 4px;
+}
+
+.Voador {
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: plum;
+    color:black;
+    margin-right: 4px;
+}
+
+.Sombrio{
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: rgb(74, 20, 121);
+    color: black;
+    margin-right: 4px;
+}
+
+.Inseto{
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: greenyellow;
+    color: black;
+    margin-right: 4px;
+}
+
+.Terra{
+    display: inline;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: rgb(118, 76, 10);
+    color: black;
+    margin-right: 4px;
+}
+
+/*Abaixo estilizaremos a segunda parte da Pokedex*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.content-container {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #CCC;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 80%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

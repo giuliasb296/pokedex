@@ -1,0 +1,91 @@
+<!--Definimos nosso menu de navegação-->
+<nav>
+  <!--Definimos nossa logo-->
+  <img class="logo" [src]="logo" alt="logo pokémon">
+  <!--Definimos uma lista de menu-->
+  <ul>
+    <!--Percorremos a lista de link que temos no app.componente.ts-->
+    <!--Quando encontrado o valor POkedex dessa lista, atribuimos uma classe especial-->
+    <li *ngFor="let link of links" [ngClass]="{'link_selecionado': link === 'Pokedex'}">{{link}}</li>
+  </ul>
+  <!--Definimos nossa imagem de perfil-->
+  <img class="imgProfile" src={{imgProfile}} alt="Imagem do Perfil">
+</nav>
+
+<!--Definimos nosso título principal-->
+<h1>{{title}}</h1>
+
+<!--Definimos uma div que irá compor um ícone, um input e um botão-->
+<div class="search">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+  <input [(ngModel)]="filterValue" class="inputPrincipal" type="text" placeholder="Pesquisar por nome...">
+  <button class="btn_search">Search</button>
+</div>
+
+<!--Definimos a estrutura principal do nosso site, que será composta com os cards com cada pokémon e um formulário de pesquisa lateral.-->
+<main>
+  <form>
+    <!--Opções para escolher o tipo de pokémon-->
+    <select id="tipo" name="tipoPokemon">
+      <option value="agua">Tipo</option>
+      <option value="fogo">Fogo</option>
+      <option value="eletrico">Elétrico</option>
+      <option value="grama">Grama</option>
+      <option value="pedra">Pedra</option>
+      <option value="místico">Lendário</option>
+    </select>
+
+    <!--Opções para escolher as habilidades do pokémon-->
+    <select name="habilidades" id="habilidades">
+      <option value="habilidades">Habilidades</option>
+      <option value="Overgrow">Overgrow</option>
+      <option value="Blaze">Blaze</option>
+      <option value="Torrent">Torrent</option>
+    </select>
+
+    <!--Opções para o tamanho do pokémon-->
+    <div>
+      <h3>Altura:</h3>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="pequeno">Pequeno
+      </label>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="medio">Médio
+      </label>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="grande">Grande
+      </label>  
+    </div>
+    <div>
+      <h3>Largura:</h3>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="pequeno">Pequeno
+      </label>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="medio">Médio
+      </label>
+      <label>
+        <input type="checkbox" name="" id="pequeno" value="grande">Grande
+      </label>  
+    </div>
+  </form>
+
+  <!--Definimos nossa seção que irá compor uma lista de cards. Cada card irá ter um pokémon-->
+  <section>
+    <ul>
+      <li class="cardPokemon" *ngFor="let pokemon of filteredPokemons()" (click)="showDetails(pokemon)">
+        <img class="photoPokemon"src={{pokemon.photo}} alt="">
+        <h2>{{pokemon.name}}</h2>
+        <p class="{{type}}" *ngFor="let type of pokemon.type">{{type}}</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<div *ngIf = "selectedPokemon" class="modal">
+  <div class="content-container">
+    <h2>{{selectedPokemon.name}}</h2>
+    <p>{{selectedPokemon.description}}</p>
+    <button class="btn_fechar"(click)="closeModal()">Fechar</button>
+  </div>
+</div>
